@@ -44,3 +44,15 @@ const increment = outerFunction();
 for (i = 0; i < 10; i++) {
   console.log(`count = ${increment()}`);
 }
+
+function makeMultiplier(factor) {
+  return function (num) {
+    return num * factor;
+  };
+}
+
+const double = makeMultiplier(2);
+const triple = makeMultiplier(3);
+
+console.log(`7 doubled = ${double(7)}`);
+console.log(`7 tripled = ${triple(7)}`);
